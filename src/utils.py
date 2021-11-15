@@ -7,3 +7,11 @@ def changeFont(string):
 
 
 print(changeFont(string))
+
+cadena="soy una cadena"
+
+def replaceString(cadena):
+   cadena= cadena.replace(" ","-")
+   return cadena
+
+replaceString(cadena)
