@@ -15,3 +15,18 @@ def replaceString(cadena):
    return cadena
 
 replaceString(cadena)
+
+resultados = [2,4,6,2,3,7,9,6,5]
+
+def segundoPuesto(lista):
+    puestos = []
+    
+    for resultado in lista:
+        
+        if resultado not in puestos:
+            puestos.append(resultado)
+            
+
+    return ((len(puestos)-1))
+
+print(segundoPuesto(resultados))
