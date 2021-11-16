@@ -23,12 +23,29 @@ def replaceString(cadena):
 
 replaceString(cadena)
 
-# ejercicio4
+
+# Ejercicio 4
 nomYape="nombre apellido"
 
 def replaceNameAndSurname(cadena):
     return cadena.title()
     
+# Ejercicio 5
+
+resultados = [2,4,6,2,3,7,9,8,5]
+
+def segundoPuesto(lista):
+    puestos = []
+    
+    for resultado in lista:
+        
+        if resultado not in puestos:
+            puestos.append(resultado)
+            
+    puestos.sort()
+    return puestos[(len(puestos)-2)]
+
+print(segundoPuesto(resultados))
 
 print(replaceNameAndSurname(nomYape))
 # Ejercicio Extra 
@@ -44,3 +61,4 @@ def triangulo(num):
         punta += 1
 
 triangulo(7)
+
