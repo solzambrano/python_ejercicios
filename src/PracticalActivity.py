@@ -72,12 +72,82 @@ number = int(input("Introduce un numero: "))
 def isDivisible(number):
     str = 'es divisible por '
     if number % 2 == 0:
-        str + '2, '
+        str += '2, '
     if number % 3 == 0:
-        str + '3, '
-        if number % 5 == 0:
-            str + '5, '
-        if number % 7 == 0:
-            str + '7'
+        str += '3, '
+    if number % 5 == 0:
+        str += '5, '
+    if number % 7 == 0:
+        str += '7'
 
     print(str)
+
+# 9) Añadir al ejercicio anterior que nos diga por cuál de los cuatro es divisible (hay que decir todos por los que es divisible)
+
+isDivisible(number)
+
+# hecho en el punto 8
+
+# 10)  Escribir un programa que escriba en pantalla los divisores de un número dado
+
+number = int(input("Introduce un numero: "))
+contador = 0
+for divisor in range(1,number+1):
+    if (number % divisor) == 0 :
+        print(divisor,"es divisor")
+        contador += 1
+print("el numero ",number," tiene ",contador," divisores")
+
+# 11) Escribir un programa que nos diga si un número dado es primo (no es divisible por ninguno otro número que no sea él mismo o la unidad)
+
+def isprime(number):
+    if number == 1:
+        return False
+    if number == 2:
+        return True
+    if number % 2 == 0:
+        return False
+    for i in range(3, number, 2):
+        if number % i == 0:
+            return False
+    return True
+
+if isprime(int(input("Introduce un numero: "))):
+    print("El numero es primo")
+else:
+    print("El numero no es primo")
+
+# 12) Pide una nota (número). Muestra la calificación según la nota:  0-3: Muy deficiente, 3-5: Insuficiente, 5-6: Suficiente, 6-7: Bien, 7-9: Notable, 9-10: Sobresaliente.                                         
+
+def qualification(nota):
+    if nota <= 3:
+        print("Muy deficiente")
+    elif nota <= 5:
+        print("Insuficiente")
+    elif nota <= 6:
+        print("Suficiente")
+    elif nota <= 7:
+        print("Bien")
+    elif nota <= 9:
+        print("Notable")
+    else:
+        print("Sobresaliente")
+
+qualification(int(input("Introduce una nota: ")))
+
+
+# 13) Realiza un programa que escriba una pirámide del 1 al 30 de la siguiente forma
+"""         1
+            22
+            333
+            4444
+            55555
+            666666"""
+
+
+def pyramid(number):
+    for i in range(1, number+1):
+        print(str(i) * i)
+
+
+pyramid(int(input("Introduce un numero: ")))
