@@ -217,4 +217,4 @@ def isCapicúa (string):
 
     #NO ENTIENDO BIEN ESTO
 
-# Me canse de hacerlo, pero me gustaria que me ayudara a ver como funciona el 11 en adelante
+# Me canse de hacerlo, pero me gustaria que me ayudaran a ver como funciona el 11 en adelante.
