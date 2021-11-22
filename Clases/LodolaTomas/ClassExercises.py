@@ -69,6 +69,7 @@ class DimensionalMatrix3x3:
                                     self.matrix[2][0] * other.matrix[0][1] + self.matrix[2][1] * other.matrix[1][1] + self.matrix[2][2] * other.matrix[2][1],
                                     self.matrix[2][0] * other.matrix[0][2] + self.matrix[2][1] * other.matrix[1][2] + self.matrix[2][2] * other.matrix[2][2])
 
-    
+    def __str__(self): #sobrecarrega el operador str
+        return str(self.matrix)
 
 print(DimensionalMatrix3x3(0,-7,3,2,4,-1,12,7,-6) * DimensionalMatrix3x3(5,4,-3,0,-6,10,-2,8,11))
