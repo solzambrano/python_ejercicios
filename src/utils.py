@@ -77,3 +77,20 @@ def triangulo(num):
 
 #triangulo(7)
 
+def countMostUsedCharaters(string):
+    letras_dic = dict()  #Guarda repetición de letras
+    string = string.replace(" ","") #Elimina espacios
+    string = string.lower() # Convierte a minusculas
+    for letra in string: #Por cada letra
+        if letra in letras_dic: #Si ya estaba en el dic() significa que se repite
+            letras_dic[letra] += 1 #Continua el conteo
+        else:
+            letras_dic[letra] = 1 #Si la letra no esta en el diccionario, la agrega
+    # print(letras_dic) #{'c': 2, 'o': 4, 'd': 2, 'a': 1}
+    letras_dic = dict(sorted(letras_dic.items(), key=lambda item: item[1])) #Ordena el diccionario por valor
+    #print(letras_dic) #{'a': 1, 'c': 2, 'd': 2, 'o': 4}
+    masUsados = list(letras_dic.items())[-3:] #Obtiene los ultimos 3 del diccionario
+    print(masUsados)
+    
+
+#countMaxCharaters("Codo a Codo") #[('c', 2), ('d', 2), ('o', 4)]
