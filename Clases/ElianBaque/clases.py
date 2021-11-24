@@ -15,37 +15,31 @@ El administrador puede ver a todos los usuarios y lo que tenga adentro. El repor
 
 6-Escribir una nueva class que herede de server.py y que maneje solo informacion en JSON."""
 
-# Ejercicio 1 Pensado con complejo positivo
-class MathComplex:
+# Ejercicio 3
+# Suma y Resta es Entre columnas verticales. En la resta se cambia el signo a la segunda matriz y se hace la operacion.
+class Matris3D: # Se que no se ponen numeros para crear, pero era para no perderme tanto
 
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
+    def __init__(self, matris , matrisDos):
+        self.matris = matris
+        self.matrisDos = matrisDos
 
-    def Suma(self, real, imaginario):
-        resultado = str(self.a + real) + " + " + str(self.b + imaginario) + "i"
-        return resultado
 
-    def Resta(self, real, imaginario):
-        if(self.b - imaginario > 0):
-            ResImaginario = " + " + str(self.b - imaginario) + "i"
-        else:
-            ResImaginario = str(self.b - imaginario) + "i"
-        resultado = str(self.a - real) + ResImaginario
-        return resultado
+    def imprimir(self):
+        count = 0
+        for x in self.matris["columnaX"]:
+            print(x + self.matrisDos["columnaX"][count])
+            count += 1
 
-    def Multi(self, real, imaginario):
-        resultado = str(self.a * real) + " + " + str(self.b * imaginario) + "i"
-        return resultado
+# Va queriendo eso , tengo que pensarlo un poco mas
+MiMatris = Matris3D({
+            "columnaX" : (1,4,5),
+            "columnaY" : (7,2,5),
+            "columnaZ" : (1,4,5)
+        },{
+            "columnaX" : (9,6,5),
+            "columnaY" : (7,2,5),
+            "columnaZ" : (1,4,5)
+        })
 
-    def Div(self, real, imaginario):
-        resultado = resultado = str(self.a / real) + " + " + str(self.b / imaginario) + "i"
-        return resultado
+MiMatris.imprimir()
 
-Objeto = MathComplex(6, 7)
-print(Objeto.Suma(9, 8))
-print(Objeto.Resta(7, 2))
-print(Objeto.Multi(6, 2))
-print(Objeto.Div(3, 7)) # Condicion si es flotante o no Para despues
-
-# Ejercicio 2
