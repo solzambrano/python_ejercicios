@@ -23,23 +23,47 @@ class Matris3D: # Se que no se ponen numeros para crear, pero era para no perder
         self.matris = matris
         self.matrisDos = matrisDos
 
-
-    def imprimir(self):
+    def Suma(self):
+        
+        newcolumnX = []
+        newcolumnY = []
+        newcolumnZ = []
         count = 0
+        countDos = 0
+        countTres = 0
+
         for x in self.matris["columnaX"]:
-            print(x + self.matrisDos["columnaX"][count])
+            newcolumnX.insert(count, x + self.matrisDos["columnaX"][count]) 
             count += 1
+        for x in self.matris["columnaY"]:
+            newcolumnY.insert(countDos, x + self.matrisDos["columnaY"][countDos]) 
+            countDos += 1        
+        for x in self.matris["columnaZ"]:
+            newcolumnZ.insert(countTres, x + self.matrisDos["columnaZ"][countTres]) 
+            countTres += 1
+
+        MatrisFinal = {
+            "columnX" : newcolumnX,
+            "columnY" : newcolumnY,
+            "columnZ" : newcolumnZ
+        }
+
+        return print(MatrisFinal)
+        
+
+
 
 # Va queriendo eso , tengo que pensarlo un poco mas
 MiMatris = Matris3D({
-            "columnaX" : (1,4,5),
-            "columnaY" : (7,2,5),
-            "columnaZ" : (1,4,5)
-        },{
-            "columnaX" : (9,6,5),
-            "columnaY" : (7,2,5),
-            "columnaZ" : (1,4,5)
-        })
+            "columnaX" : [1,4,5],
+            "columnaY" : [7,2,5],
+            "columnaZ" : [1,4,5]
+        },{                             # Ingresar matrises a Sumar, restar y multiplicar
+            "columnaX" : [9,7,41],
+            "columnaY" : [7,2,5],
+            "columnaZ" : [1,4,5]
+        }) 
 
-MiMatris.imprimir()
+MiMatris.Suma()
+
 
