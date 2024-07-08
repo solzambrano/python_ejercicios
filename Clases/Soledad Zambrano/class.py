@@ -152,11 +152,8 @@ for fila in suma:
     print(fila)
 
 
-        
 
 
 
 
 
-
-    
